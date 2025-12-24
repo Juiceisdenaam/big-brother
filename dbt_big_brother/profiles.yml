@@ -1,0 +1,22 @@
+dbt_big_brother:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('POSTGRES_HOSTNAME') }}"
+      port: 5439
+      user: "{{ env_var('POSTGRES_USER') }}"
+      password: "{{ env_var('POSTGRES_PASSWORD') }}"
+      dbname: projects
+      schema: "{{ env_var('POSTGRES_USER') }}"
+      threads: 3
+
+    prod:
+      type: postgres
+      host: "{{ env_var('POSTGRES_HOSTNAME') }}"
+      port: 5439
+      user: ""
+      password: "{{ env_var('POSTGRES_PASSWORD_P') }}"
+      dbname: projects
+      schema: "" # This is not used for prod
+      threads: 3
