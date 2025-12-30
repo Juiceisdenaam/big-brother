@@ -20,3 +20,6 @@ dbt_big_brother/target/
 
 # pre-commit target folder
 target
+
+__pycache__/
+*.pyc
